@@ -1,0 +1,50 @@
+<table class="table mb-0">
+  <tbody>
+  <tr>
+    <th scope="row">Method Name</th>
+    <td>{{developmentMethod.name}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Method Description</th>
+    <td class="show-new-lines">{{developmentMethod.description}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Examples</th>
+    <td class="show-new-lines">
+      <ul class="list-group">
+        <li *ngFor="let example of developmentMethod.examples" class="list-group-item">
+          {{example}}
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Input Artifacts</th>
+    <td>
+      <app-artifacts-group-info [selection]="decision.inputArtifacts" [groups]="developmentMethod.inputArtifacts"
+                                (submitGroupsForm)="updateDecisions.emit({inputArtifacts: $event.value})"></app-artifacts-group-info>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Output Artifacts</th>
+    <td>
+      <app-artifacts-group-info [selection]="decision.outputArtifacts" [groups]="developmentMethod.outputArtifacts"
+                                (submitGroupsForm)="updateDecisions.emit({outputArtifacts: $event.value})"></app-artifacts-group-info>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Involved Stakeholders</th>
+    <td>
+      <app-stakeholders-group-info [selection]="decision.stakeholders" [groups]="developmentMethod.stakeholders"
+                                   (submitGroupsForm)="updateDecisions.emit({stakeholders: $event.value})"></app-stakeholders-group-info>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Tools</th>
+    <td>
+      <app-tools-info [selection]="decision.tools" [elements]="developmentMethod.tools"
+                      (submitToolForm)="updateDecisions.emit({tools: $event.value})"></app-tools-info>
+    </td>
+  </tr>
+  </tbody>
+</table>

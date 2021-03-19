@@ -1,0 +1,21 @@
+<div class="nav-scroller bg-white shadow-sm">
+  <nav class="nav nav-underline" *ngIf="artifact">
+    <a class="nav-link active" [routerLink]="[]">{{artifact.name}}</a>
+  </nav>
+</div>
+
+<main class="container" *ngIf="artifact">
+
+  <div class="alert alert-info mt-3" role="alert">
+    Update an Artifact and define its values.
+  </div>
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2">Artifact</h6>
+    <div class="text-muted">
+      <app-method-element-form [methodElement]="artifact"
+                               (submitMethodElementForm)="updateValue($event.value)"></app-method-element-form>
+    </div>
+  </div>
+
+</main>

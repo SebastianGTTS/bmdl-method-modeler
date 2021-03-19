@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <ul class="list-group shadow-sm">
+    <li *ngFor="let element of elements; let elementIndex = index" class="list-group-item" formArrayName="elements">
+      <app-method-element-info
+        [formArrayName]="elementIndex.toString()"
+        [listName]="element.list"
+        [methodElement]="element.element"
+        [methodElements]="methodElements"
+        methodElementName="Tool"></app-method-element-info>
+    </li>
+  </ul>
+  <div *ngIf="elements.length > 0" class="form-group row mt-3">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-sm btn-dark btn-block" [disabled]="!form.valid">
+        <ng-container>Update</ng-container>
+      </button>
+    </div>
+  </div>
+</form>

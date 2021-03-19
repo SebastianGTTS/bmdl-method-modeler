@@ -1,0 +1,17 @@
+<form [formGroup]="toolsForm" (ngSubmit)="submitForm()">
+  <app-method-elements-selection-form
+    class="form-group"
+    formArrayName="tools"
+    [createFormGroupFactory]="createFormGroupFactory"
+    [listNames]="listNames"
+    [methodElements]="methodElements"
+    [multipleAllowed]="true"
+    methodElementName="Tool"></app-method-elements-selection-form>
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-sm btn-dark btn-block" [disabled]="!toolsForm.valid">
+        Update
+      </button>
+    </div>
+  </div>
+</form>

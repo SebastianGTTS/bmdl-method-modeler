@@ -1,0 +1,19 @@
+<form [formGroup]="addProcessPatternForm" (ngSubmit)="submitForm()">
+  <div class="form-group row">
+    <label for="processPatternSelector" class="col-sm-4 col-form-label">Method Pattern</label>
+    <div class="col-sm-8">
+      <select id="processPatternSelector" formControlName="processPatternId" class="form-control">
+        <option *ngFor="let processPattern of processPatterns"
+                [value]="processPattern._id">{{ processPattern.name }}</option>
+        <option *ngIf="processPatterns.length === 0">No fitting Method Pattern was found</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-sm btn-dark btn-block" [disabled]="!addProcessPatternForm.valid">
+        Add Method Pattern
+      </button>
+    </div>
+  </div>
+</form>
