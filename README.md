@@ -43,7 +43,7 @@ The tools is based on the [Angular framework](https://angular.io/), the [PouchDB
 6. Have fun with the tool :)
 ## Further Information
 
-- **Live Demonstration:** https://blindreviewconference.github.io/business-modeling-suite/
+- **Live Demonstration:** https://sebastiangtts.github.io/bmdl-method-modeler/
 - **Research Paper:** Currently under review
 
 ## License
